@@ -19,12 +19,15 @@ function Preview(props) {
   };
 
   const html = marked(props.text);
-  document.getElementById("preview").innerHTML = html;
 
   return (
     <section className="previewContainer" style={previewContainer}>
       <h1>Preview</h1>
-      <div id="preview" style={preview}></div>
+      <div
+        id="preview"
+        style={preview}
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></div>
     </section>
   );
 }
